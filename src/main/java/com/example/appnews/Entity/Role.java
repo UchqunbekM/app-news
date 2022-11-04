@@ -16,7 +16,9 @@ import java.util.List;
 @Entity
 public class Role extends AbsEntity {
 
+    @Column(unique = true, nullable = false)
     private String name;
+    @Enumerated(value = EnumType.STRING)
     @ElementCollection(fetch = FetchType.LAZY)
     private List<Permission> permissionList;
 
